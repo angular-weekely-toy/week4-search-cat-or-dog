@@ -1,0 +1,44 @@
+.outer {
+  .item {
+    padding: 20px;
+    border: 1px solid black;
+    cursor: pointer;
+
+    img {
+      display: block;
+      height: 200px;
+      width: 200px;
+      object-fit: cover;
+      background-color: transparent;
+      border-radius: 4px;
+    }
+    .title {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    &:hover img {
+      border-radius: 4px;
+      object-fit: contain;
+      animation-name: fade;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+    }
+
+    &:hover .title {
+      font-weight: 700;
+    }
+  }
+}
+
+@keyframes fade {
+  0% {
+    transform: scale(0.9);
+    border-radius: 100px;
+  }
+  100% {
+    transform: scale(1);
+    border-radius: 4px;
+  }
+}

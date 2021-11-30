@@ -1,1 +1,15 @@
-<p>breed works!</p>
+<ng-container *ngIf="breedList$ | async as breedList; else none">
+  <app-picture-list>
+    <ng-container *ngFor="let breedItem of breedList">
+      <app-picture-list-item
+        [item]="breedItem"
+        [src]="breedItem?.image?.url ?? ''"
+        [title]="breedItem.name"
+        (onClick)="handleClick($event)"
+      ></app-picture-list-item>
+    </ng-container>
+  </app-picture-list>
+</ng-container>
+<ng-template #none>
+  <p>귀여운 고양이들이 오고있어요 🐈</p>
+</ng-template>

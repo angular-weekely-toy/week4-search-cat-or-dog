@@ -1,1 +1,8 @@
-<p>picture-list-item works!</p>
+<div class="outer" (click)="handleClick()">
+  <div class="item">
+    <img [src]="src" />
+    <ng-container *ngIf="title">
+      <span class="title">{{ title }}</span>
+    </ng-container>
+  </div>
+</div>
