@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-import { NavigationExtras, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { Breed } from '../models/breed';
 import { BreedService } from './breed.service';
@@ -14,7 +14,7 @@ export class BreedComponent implements OnInit {
 
   constructor(public breedService: BreedService, private router: Router) {
     this.breedList$ = this.breedService.breedList$;
-    //TODO 다른 페이지 -> Breed 로 가면 못불러온다, 왤까??
+    // TODO 다른 페이지 -> Breed 로 가면 못불러온다, 왤까??
   }
 
   ngOnInit(): void {}

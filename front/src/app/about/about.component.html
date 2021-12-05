@@ -1,1 +1,22 @@
-<p>about {{ breed }} works!</p>
+<ng-container *ngIf="breedDetail$ | async as breedDetail">
+  <div>
+    <app-picture-list-item
+      [item]="breedDetail"
+      [src]="breedDetail.image.url"
+      [title]="breedDetail.name"
+    ></app-picture-list-item>
+    <p>Detail Info...</p>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="pictures$ | async as pictures">
+  <app-picture-list>
+    <ng-container *ngFor="let picture of pictures">
+      <app-picture-list-item
+        [item]="picture"
+        [src]="picture.breeds.image.url"
+        (onClick)="handleClick($event)"
+      ></app-picture-list-item>
+    </ng-container>
+  </app-picture-list>
+</ng-container>

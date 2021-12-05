@@ -1,5 +1,5 @@
 export class LikeItem {
-  id: number;
+  id: string;
   user_id: string;
   image_id: string;
   sub_id: string;
@@ -10,7 +10,7 @@ export class LikeItem {
   };
 
   constructor(
-    id: number,
+    id: string,
     user_id: string,
     image_id: string,
     sub_id: string,

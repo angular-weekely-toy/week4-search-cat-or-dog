@@ -1,1 +1,9 @@
-<p>like works!</p>
+<app-picture-list>
+  <ng-container *ngFor="let likeItem of likeList$ | async">
+    <app-picture-list-item
+      [item]="likeItem"
+      [src]="likeItem.image.url"
+      (onClick)="unlike(likeItem.id)"
+    ></app-picture-list-item>
+  </ng-container>
+</app-picture-list>
